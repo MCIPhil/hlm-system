@@ -11,7 +11,8 @@ Unauthorized use, copying, modification, distribution, or creation of derivative
 For permission requests, contact: zqcllwldd@126.com
 
 
-本项目是一个用于分析《红楼梦》文本中人物关系的可视化系统。系统通过调用 DeepSeek 大模型从小说文本中抽取人物关系，生成关系图谱数据，并在前端页面中进行图谱展示、关系筛选和人物最短路径查询。本项目实际引用于我辅修的人工智能微专业，这是我最认真做的一次了，调api还花我三块大洋！！！
+本项目是一个用于分析《红楼梦》文本中人物关系的可视化系统。系统通过调用 DeepSeek 大模型从小说文本中抽取人物关系，生成关系图谱数据，并在前端页面中进行图谱展示、关系筛选和人物最短路径查询。
+本项目实际应用于我辅修的人工智能微专业，这是我最认真做的一次了，调api还花我三块大洋！！！
 
 ## 功能特性
 
