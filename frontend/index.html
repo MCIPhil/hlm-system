@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>《红楼梦》人物关系图谱系统</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="style.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+</head>
+<body>
+  <header class="header">
+    <div class="header-title">
+      <h1>《红楼梦》人物关系图谱系统</h1>
+      <p>上传文本，自动生成人物关系图，并查询任意两个人物之间的最短路径</p>
+    </div>
+  </header>
+
+  <main class="main-layout">
+    <aside class="sidebar">
+      <section class="panel">
+        <h2>1. 上传文本</h2>
+
+        <input
+          type="file"
+          id="fileInput"
+          accept=".txt"
+          class="file-input"
+        >
+
+        <button
+          id="analyzeBtn"
+          class="primary-btn"
+          onclick="uploadAndAnalyze()"
+        >
+          上传并分析
+        </button>
+
+        <div id="analyzeStatus" class="status-box">
+          等待上传《红楼梦》txt 文件
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>2. 最短路径查询</h2>
+
+        <label for="sourceInput">起点人物</label>
+        <input
+          id="sourceInput"
+          list="characterList"
+          placeholder="例如：林黛玉"
+          class="text-input"
+        >
+
+        <label for="targetInput">终点人物</label>
+        <input
+          id="targetInput"
+          list="characterList"
+          placeholder="例如：王熙凤"
+          class="text-input"
+        >
+
+        <datalist id="characterList"></datalist>
+
+        <button
+          class="primary-btn"
+          onclick="queryShortestPath()"
+        >
+          查询最短路径
+        </button>
+      </section>
+
+      <section class="panel">
+        <h2>3. 查询结果</h2>
+
+        <div id="pathSummary" class="summary-box">
+          暂无路径查询结果
+        </div>
+
+        <div id="pathDetail" class="detail-list"></div>
+      </section>
+
+      <section class="panel">
+        <h2>4. 图谱详情</h2>
+
+        <div id="detailBox" class="summary-box">
+          点击图中的节点或关系查看详情
+        </div>
+      </section>
+    </aside>
+
+    <section class="graph-section">
+      <div class="graph-toolbar">
+        <div class="toolbar-actions">
+          <button class="small-btn" onclick="reloadGraph()">重新加载图谱</button>
+          <button class="small-btn ghost-btn" onclick="clearHighlight()">清除路径高亮</button>
+          <button class="small-btn ghost-btn" onclick="resetGraphView()">重置视图</button>
+        </div>
+
+        <div class="graph-controls">
+          <label class="control-item range-control" for="minWeightSlider">
+            <span>关系强度</span>
+            <input
+              id="minWeightSlider"
+              type="range"
+              min="0"
+              max="0"
+              value="0"
+              step="1"
+            >
+            <b id="minWeightValue">0</b>
+          </label>
+
+          <label class="control-item" for="maxNodesSelect">
+            <span>显示人物</span>
+            <select id="maxNodesSelect">
+              <option value="0">全部</option>
+              <option value="12">前 12</option>
+              <option value="18">前 18</option>
+              <option value="24">前 24</option>
+            </select>
+          </label>
+
+          <label class="control-item" for="layoutSelect">
+            <span>布局</span>
+            <select id="layoutSelect">
+              <option value="force">疏朗力导</option>
+              <option value="circular">环形</option>
+            </select>
+          </label>
+
+          <label class="control-item toggle-control" for="labelToggle">
+            <input id="labelToggle" type="checkbox" checked>
+            <span>显示标签</span>
+          </label>
+        </div>
+
+        <div id="graphStats" class="graph-stats">显示 0/0 个节点，0/0 条关系</div>
+      </div>
+
+      <div id="chart" class="chart"></div>
+    </section>
+  </main>
+
+  <script src="app.js?v=5"></script>
+</body>
+</html>
