@@ -403,34 +403,13 @@ Insufficient Balance
 - DeepSeek 账户余额是否充足
 - `DEEPSEEK_BASE_URL` 是否为 `https://api.deepseek.com`
 
-## GitHub 提交建议
 
-上传 GitHub 前，建议不要提交以下内容：
+## 注意事项
 
-```text
-backend/.env
-backend/__pycache__/
-backend/uvicorn.out.log
-backend/uvicorn.err.log
-```
-
-可以在项目根目录创建 `.gitignore`：
-
-```gitignore
-backend/.env
-backend/__pycache__/
-backend/**/__pycache__/
-backend/uvicorn.out.log
-backend/uvicorn.err.log
-*.pyc
-```
-
-如果不希望上传生成数据，也可以忽略：
-
-```gitignore
-backend/data/graph.json
-backend/uploads/
-```
+- 全量分析期间请保持电脑不睡眠、网络稳定。
+- 如果电脑盒盖进入睡眠，分析任务可能会中断。
+- 全量分析会消耗 API 额度，建议先使用较小的 `MAX_LLM_CALLS` 测试。
+- 前端页面依赖后端 API，必须先启动后端服务再使用前端。
 
 ## 注意事项
 
