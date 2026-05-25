@@ -1,6 +1,17 @@
 # 《红楼梦》人物关系图谱分析系统
 
-本项目是一个用于分析《红楼梦》文本中人物关系的可视化系统。系统通过调用 DeepSeek 大模型从小说文本中抽取人物关系，生成关系图谱数据，并在前端页面中进行图谱展示、关系筛选和人物最短路径查询。
+
+Copyright © 2026 MCIPhil ，Human-Intelligence-CN.
+All rights reserved.
+
+This repository, including all code, documentation, and related materials (collectively "the Work"), is private and protected by copyright law and international treaties.
+
+Unauthorized use, copying, modification, distribution, or creation of derivative works from this Work is strictly prohibited. No part of the Work may be reproduced, transmitted, or utilized in any form without explicit written permission from the copyright owner.
+
+For permission requests, contact: zqcllwldd@126.com
+
+
+本项目是一个用于分析《红楼梦》文本中人物关系的可视化系统。系统通过调用 DeepSeek 大模型从小说文本中抽取人物关系，生成关系图谱数据，并在前端页面中进行图谱展示、关系筛选和人物最短路径查询。本项目实际引用于我辅修的人工智能微专业，这是我最认真做的一次了，调api还花我三块大洋！！！
 
 ## 功能特性
 
