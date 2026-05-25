@@ -12,6 +12,7 @@ For permission requests, contact: zqcllwldd@126.com
 
 
 本项目是一个用于分析《红楼梦》文本中人物关系的可视化系统。系统通过调用 DeepSeek 大模型从小说文本中抽取人物关系，生成关系图谱数据，并在前端页面中进行图谱展示、关系筛选和人物最短路径查询。
+
 本项目实际应用于我辅修的人工智能微专业，这是我最认真做的一次了，调api还花我三块大洋！！！
 
 ## 功能特性
@@ -96,7 +97,7 @@ conda activate math
 进入项目后端目录：
 
 ```powershell
-cd D:\python_project\ShuXueJianMo\python_study\hlmsystem\backend
+cd ..\hlmsystem\backend
 ```
 
 安装依赖：
@@ -173,7 +174,7 @@ MAX_LLM_CALLS=0
 进入后端目录：
 
 ```powershell
-cd D:\python_project\ShuXueJianMo\python_study\hlmsystem\backend
+cd ..\hlmsystem\backend
 ```
 
 启动 FastAPI 服务：
@@ -209,13 +210,13 @@ http://127.0.0.1:8000/api/health
 前端是静态页面，可以直接用浏览器打开：
 
 ```text
-D:\python_project\ShuXueJianMo\python_study\hlmsystem\frontend\index.html
+..\frontend\index.html
 ```
 
 也可以在 `frontend` 目录下启动一个简单的静态服务器：
 
 ```powershell
-cd D:\python_project\ShuXueJianMo\python_study\hlmsystem\frontend
+cd ..\hlmsystem\frontend
 python -m http.server 5500 --bind 127.0.0.1
 ```
 
